@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriforceRealm</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(./assets/background-about.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #header {
+            background-image: url('./assets/background_menu_hm.jpg');
+            background-size: 200px 200px;
+            background-repeat: repeat;
+        }
+
+        .custom-box {
+            background-color: rgba(17, 24, 39, 0.8);
+            border-color: #BFA047; 
+            max-width: 800px; 
+            width: 90%; 
+            overflow-y: auto; 
+            max-height: 80vh; 
+            padding: 20px; 
+            margin: 20px auto; 
+        }
+        #navLinks {
+            background-image: url('./assets/background_menu_hm.jpg');
+            background-size: 200px 200px;
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body class="font-rubik bg-[#042904] text-white">
+    <div id="header" class="bg-[#337B4B] fixed inset-x-0 top-0 z-50 border-b-2 border-[#BFA047]">
+        <div class="max-w-screen-lg mx-auto flex justify-between items-center px-4 py-3">
+            <a href="./index.html">
+                <img class="w-[180px] lg:w-[220px] cursor-pointer" src="./assets/logotest.svg" alt="...">
+            </a>
+            <div class="flex items-center gap-6 md:hidden">
+                <ion-icon onclick="toggleMenu()" name="menu" class="text-3xl cursor-pointer text-white"></ion-icon>
+            </div>
+            <div class="font-bold text-[#327B4B] hidden md:flex items-center justify-center gap-4 pl-4">
+                <a href="./about.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 hover:text-[#46A766]">Sobre</a>
+                <a href="./guide.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 hover:text-[#46A766]">Guia</a>
+                <a href="./gamepage.html" class="font-bold text-[#327B4B] bg-white border-solid border-2 border-[#BFA047] py-2 px-6 rounded-full hover:bg-white">Jogar!</a>
+            </div>
+        </div>
+    </div>
+    <div id="navLinks" class="font-bold bg-cover bg-center bg-no-repeat bg-fixed fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden">
+        <a href="./about.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 text-[#327B4B] hover:text-[#46A766]">Sobre</a>
+        <a href="./guide.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 text-[#327B4B] hover:text-[#46A766]">Guia</a>
+        <a href="./gamepage.html" class="font-bold text-[#327B4B] bg-white border-solid border-2 border-[#BFA047] py-2 px-6 rounded-full hover:bg-white">Jogar!</a>
+    </div>
+
+    <div class="mt-8 flex justify-center items-center h-screen">
+        <div class="rounded-lg border-2 border-solid border-[#BFA047] p-8 custom-box">
+            <h1 class="text-3xl font-bold text-center mb-4">A Criação e o Lançamento de Zelda: A Link to the Past</h1>
+            <p class="text-base">Bem-vindos, aventureiros! Hoje vamos mergulhar nos bastidores de um dos jogos mais 
+                icônicos de todos os tempos: Zelda - A Link to the Past. Preparem-se para uma viagem no tempo até o Japão dos anos 90, 
+                onde a magia dos videogames e a 
+                criatividade estavam fervilhando na mente dos desenvolvedores da Nintendo.</p>
+            <h1 class="text-3xl font-bold text-center mb-4">O Despertar da Lenda</h1>
+            <p class="text-base">Tudo começou no início dos anos 90, quando a Nintendo, liderada pelo lendário Shigeru 
+                Miyamoto e sua equipe talentosa, decidiu criar a terceira instalação da série Zelda. Após o sucesso 
+                dos dois primeiros jogos, havia uma pressão para inovar e superar as expectativas dos fãs sedentos por aventuras.
+
+                Miyamoto, conhecido por seu amor pela exploração e pela narrativa envolvente, queria criar um 
+                mundo que não apenas desafiasse os jogadores, mas os imergisse completamente em uma jornada épica. 
+                Inspirado por suas próprias aventuras na infância e por mitologias que permeavam seu imaginário, ele 
+                começou a esboçar os primeiros conceitos para o que se tornaria A Link to the Past.</p>
+            <h1 class="text-3xl font-bold text-center mb-4">A Magia da Criação</h1>
+            <p class="text-base">Os desenvolvedores da Nintendo trabalharam arduamente para trazer 
+                à vida o vasto reino de Hyrule, repleto de segredos, dungeons intrigantes e personagens 
+                memoráveis. Cada pixel foi meticulosamente desenhado para capturar a essência de um mundo 
+                fantasioso, mas ao mesmo tempo familiar.
+
+                Os desafios foram muitos: desde a criação do sistema de jogo baseado em puzzles até a 
+                implementação da icônica perspectiva top-down que se tornaria um marco na série. Cada decisão foi 
+                cuidadosamente ponderada para garantir que o jogador se sentisse imerso em um universo coeso, onde 
+                cada passo era uma descoberta.</p>
+            <h1 class="text-3xl font-bold text-center mb-4">O Lançamento e o Legado</h1>
+            <p class="text-base">Finalmente, em 1991, Zelda - A Link to the Past foi lançado para o 
+                Super Nintendo Entertainment System (SNES), cativando jogadores ao redor do mundo com sua jogabilidade 
+                envolvente e gráficos impressionantes para a época. A crítica aclamou o jogo como um marco não apenas na 
+                série Zelda, mas também nos videogames como um todo.
+
+                O legado de A Link to the Past perdura até os dias de hoje. Sua influência pode ser sentida em 
+                inúmeros jogos subsequentes da série Zelda e em outros RPGs de ação que buscaram replicar sua fórmula de 
+                sucesso. Mais do que isso, o jogo continua a ser reverenciado por sua narrativa atemporal e pelo impacto 
+                duradouro que teve na cultura dos videogames.</p>
+            <h1 class="text-3xl font-bold text-center mb-4">Conclusão</h1>
+            <p class="text-base">Zelda - A Link to the Past não é apenas um jogo; é uma obra-prima que encapsula a 
+                imaginação e a inovação da Nintendo na era de ouro dos videogames. Desde sua concepção até seu lançamento e 
+                legado duradouro, cada aspecto dessa jornada reflete o compromisso incansável dos desenvolvedores em criar algo 
+                verdadeiramente especial.
+
+                Enquanto os fãs continuam a explorar as terras de Hyrule, é importante lembrar que por 
+                trás de cada dungeon, cada puzzle e cada pixel está a paixão e a dedicação de uma equipe que transformou um sonho em 
+                realidade. E assim, a lenda de Zelda - A Link to the Past vive eternamente nos corações e nas 
+                mentes dos jogadores ao redor do mundo.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('translate-y-full');
+        }
+    </script>
+</body>
+</html>

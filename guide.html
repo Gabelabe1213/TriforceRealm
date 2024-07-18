@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/assets/icon.gif" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Guia - Zelda: A Link to the Past</title>
+    <style>
+        body {
+            @apply bg-[#042904] font-rubik;
+            background-image: url(./assets/background-about.jpeg);
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #header {
+            @apply bg-[#337B4B] fixed inset-x-0 top-0 z-50 border-b-2 border-[#BFA047];
+            background-image: url('./assets/background_menu_hm.jpg');
+            background-size: 200px 200px;
+            background-repeat: repeat;
+        }
+        #navLinks {
+            background-image: url('./assets/background_menu_hm.jpg');
+            background-size: 200px 200px;
+            background-repeat: repeat;
+        }
+
+        .max-width {
+            @apply max-w-screen-lg mx-auto;
+        }
+
+        .header-content {
+            @apply flex justify-between items-center px-4 py-3;
+        }
+
+        .logo {
+            @apply w-[180px] lg:w-[220px] cursor-pointer;
+        }
+
+        .menu-icon {
+            @apply flex items-center gap-6 md:hidden;
+        }
+
+        .menu-links {
+            @apply font-bold text-[#327B4B] hidden md:flex items-center justify-center flex-1 gap-[80px] pl-[110px];
+        }
+
+        .menu-links a {
+            @apply border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 hover:text-[#46A766];
+        }
+
+        .menu-links a:hover {
+            @apply text-[#46A766];
+        }
+
+        .play-button {
+            @apply font-bold text-[#327B4B] bg-white border-solid border-2 border-[#BFA047] py-2 px-6 rounded-full hover:bg-white ml-auto;
+        }
+
+        .mobile-menu {
+            @apply font-bold bg-cover bg-center bg-no-repeat bg-fixed fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden;
+        }
+
+        .mobile-menu a {
+            @apply border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 text-[#327B4B] hover:text-[#46A766];
+        }
+
+        .mobile-menu a:hover {
+            @apply text-[#46A766];
+        }
+
+        .container {
+            @apply max-w-screen-lg mx-auto py-20 px-4;
+            background-color: rgba(4, 41, 4, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            @apply text-[#BFA047] font-bold text-4xl mb-10;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .post {
+            @apply mb-10 pb-6 border-b-2 border-[#BFA047];
+        }
+
+        .post h2 {
+            @apply text-[#46A766] text-2xl font-bold mb-4;
+        }
+
+        .post p {
+            @apply text-white text-base;
+        }
+
+        .post a {
+            @apply text-[#BFA047] font-bold hover:text-[#46A766] border-b-2 border-[#BFA047] transition-colors duration-300;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header" class="bg-[#337B4B] fixed inset-x-0 top-0 z-50 border-b-2 border-[#BFA047]">
+        <div class="max-w-screen-lg mx-auto flex justify-between items-center px-4 py-3">
+            <a href="./index.html">
+                <img class="w-[180px] lg:w-[220px] cursor-pointer" src="./assets/logotest.svg" alt="...">
+            </a>
+            <div class="flex items-center gap-6 md:hidden">
+                <ion-icon onclick="toggleMenu()" name="menu" class="text-3xl cursor-pointer text-white"></ion-icon>
+            </div>
+            <div class="font-bold text-[#327B4B] hidden md:flex items-center justify-center gap-4 pl-4">
+                <a href="./about.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 hover:text-[#46A766]">Sobre</a>
+                <a href="./guide.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 hover:text-[#46A766]">Guia</a>
+                <a href="./gamepage.html" class="font-bold text-[#327B4B] bg-white border-solid border-2 border-[#BFA047] py-2 px-6 rounded-full hover:bg-white">Jogar!</a>
+            </div>
+        </div>
+    </div>
+    <div id="navLinks" class="font-bold bg-cover bg-center bg-no-repeat bg-fixed fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden">
+        <a href="./about.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 text-[#327B4B] hover:text-[#46A766]">Sobre</a>
+        <a href="./guide.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 text-[#327B4B] hover:text-[#46A766]">Guia</a>
+        <a href="./gamepage.html" class="font-bold text-[#327B4B] bg-white border-solid border-2 border-[#BFA047] py-2 px-6 rounded-full hover:bg-white">Jogar!</a>
+    </div>
+
+    <div class="px-16 container py-16 my-[70px]">
+        <h1 class="text-4xl text-white font-bold">PRIMEIRO RESGATE DE ZELDA</h1>
+
+        <div class="post">
+            <h2 class="text-[#46A766] text-xl font-bold mb-4">Nesta missão, Link deve partir de sua humilde morada, 
+                localizada na parte sul do mundo do jogo, e se embrenhar nas entranhas do imponente Castelo de Hyrule para salvar a 
+                princesa Zelda.</h2>
+            <p class="text-white text-base">Inicialmente, 
+                ao despertar do sono no início do jogo, levante-se da cama. Examine a sala cuidadosamente e 
+                localize o baú posicionado na parte inferior direita da tela. Abra este baú para obter a Lanterna, um 
+                instrumento crucial para iluminar os caminhos sombrios que enfrentará em breve.
+
+                Após obter a lanterna, saia da casa e dirija-se ao norte, em direção ao perímetro do vilarejo. Aproxime-se da 
+                cerca e então vire para a esquerda, seguindo a via até se deparar com uma ponte. Atravesse a ponte e continue 
+                sua jornada até o Castelo de Hyrule.
+                
+                No castelo, você encontrará um guarda estacionado na entrada principal. Não interaja com ele. Em vez disso, 
+                desvie-se para o caminho adornado por pedras brancas localizado à direita do guarda. Siga esse trajeto até seu fim, onde uma moita solitária se destaca. Erga essa moita para revelar um buraco secreto, onde você deve cair.
+                
+                Dentro deste túnel subterrâneo, você encontrará seu tio, ferido. Interaja com ele para receber a Espada e o Escudo, 
+                ferramentas essenciais para o combate e defesa contra os inimigos que encontrará em sua aventura. Avance através do 
+                túnel e você em breve sairá no jardim interno do castelo.
+                
+                No jardim do castelo, corte o mato que bloqueia seu caminho e avance até a porta principal do castelo, localizada à 
+                esquerda. Entre e aventure-se no interior do majestoso castelo de Hyrule. Uma vez dentro, localize e entre na primeira porta à 
+                esquerda. Continue seguindo em frente, mantendo-se na parte inferior da sala até chegar à parede. Neste ponto, vire à direita e 
+                entre na porta seguinte.</p><br>
+            <p class="text-white text-base">Esta nova sala é povoada por quatro estátuas posicionadas em seu centro. Atravesse a sala e 
+                    entre na porta localizada na região central entre as estátuas. Prepare-se para o combate: um soldado o espera. Derrote-o 
+                    para obter a primeira Chave. Além disso, certifique-se de abrir o baú próximo para adquirir o Mapa do Castelo, que será 
+                    útil para orientação.
+
+                    Com a chave obtida, você poderá abrir a porta na parte inferior da sala. Prossiga por este caminho até chegar ao canto 
+                    superior esquerdo da sala, onde encontrará outra porta. No percurso, você enfrentará guardas. Uma dica útil para lidar 
+                    com eles é tentar jogá-los no buraco presente na sala, porém, mantenha-se atento para não cair nele.
+                    
+                    Ao eliminar o guarda que protege a porta, você poderá prosseguir pela porta à direita. Mais uma vez, confronte e derrote 
+                    o guarda para adquirir outra chave. Além disso, abra o baú nesta sala para obter o Bumerangue, que pode ser equipado em 
+                    seu inventário para uso.
+                    
+                    Retorne à sala anterior e desta vez, suba a escada e utilize a chave para desbloquear a porta trancada. Prossiga até 
+                    chegar ao B3, onde enfrentará outro guarda. Derrote-o e dirija-se à direita da sala, onde encontrará um guarda equipado com uma armadura cinza. Ele é um adversário mais difícil, mas pode ser derrotado usando vasos encontrados na sala. Atire dois vasos nele para derrotá-lo, ou, se isso não funcionar, use seu bumerangue para paralisá-lo e ataque com a espada. Após derrotá-lo, ele deixará cair outra chave.
+                    
+                    Com essa chave, você poderá desbloquear a porta trancada e encontrar a princesa Zelda. Converse com ela e abra o baú 
+                    próximo. Você agora deve escoltar Zelda de volta pelo caminho que veio. Ao retornar à primeira sala do castelo, Zelda irá interagir com você.
+                    
+                    Neste ponto, em vez de deixar o castelo, dirija-se à parte superior central da sala, suba a escada e entre na porta. 
+                    Continue seguindo em frente até chegar ao trono. Observe o ornamento atrás dele, vá para o lado esquerdo do ornamento e 
+                    empurre-o para a direita para revelar uma passagem secreta.</p><br>
+            <p class="text-white text-base">Na passagem secreta, que é muito escura, siga em frente, depois vire à direita, depois à 
+                    esquerda e entre na porta. Se você tiver poder mágico suficiente, poderá usar sua Lanterna para acender as tochas e 
+                    iluminar o caminho. Para isso, basta se aproximar de uma tocha e pressionar o botão Y.
+
+                        Logo à frente, acenda a tocha e continue pelo caminho. Na sala seguinte, avance até chegar a uma interseção em 
+                        forma de cruz. Vire à direita e abra o baú para adquirir outra chave. Volte e, desta vez, vire à direita e use a 
+                        chave para abrir a porta.
+                        
+                        Na próxima sala, dirija-se para a esquerda e ande pela água para evitar os ratos. Entre na porta e, ao entrar na 
+                        próxima sala, siga para o norte e para oeste até encontrar outra porta. Entre nela.
+                        
+                        Na próxima sala, vá para o lado esquerdo, acenda a tocha e derrote os ratos até que um deles deixe cair uma 
+                        chave. Use a chave para abrir a porta e continue reto até chegar a uma série de blocos. Empurre o bloco do meio 
+                        para frente e entre na porta.
+                        
+                        Nesta sala, Zelda irá falar com você novamente. Puxe a alavanca à direita para abrir a porta e entre. Abra o 
+                        baú dentro da sala e saia do santuário.</p><br>
+        </div>
+
+        <div class="post">
+            <h2 class="text-[#46A766] text-2xl font-bold mb-4">EASTERN PALACE (PRIMEIRO PINGENTE)</h2>
+            <p class="text-white text-base">No desafio do Eastern Palace e na busca pelo primeiro pingente é importante fazer uso efetivo de 
+                cada pista e cada 
+                interação com os personagens que você encontra.</p><br>
+            <p class="text-white text-base">Para começar, você deve se dirigir à vila mais próxima e procurar um menino que fica na 
+                parte sul, em uma área aberta. Este menino tem informações vitais para sua jornada: ele marcará em seu mapa o local 
+                de Sahasrahla, um NPC (Personagem Não Jogável) que desempenha um papel crucial na sua aventura. Sahasrahla se encontra 
+                ao leste da vila, numa casa próxima a alguns morros. Converse com ele para aprender sobre os três pingentes de importância 
+                central para o jogo, e ele também marcará em seu mapa a localização do Eastern Palace, que fica ao leste do local atual.</p>
+            <p class="text-white text-base">A partir daqui, você deve seguir a direção indicada para alcançar o Eastern Palace. O local 
+                estará piscando no mapa, facilitando a orientação. Ao entrar no palácio, seu objetivo é adquirir a Big Key, que é a 
+                chave para o grande baú de tesouro situado no meio do primeiro andar. Para chegar a este local, siga uma sala à direita, 
+                depois desça uma sala e siga duas salas à esquerda. Você chegará a uma sala com uma plataforma elevada.
+
+                Nesta sala, seu oponente é um cyclop que deve ser abatido com golpes diretos de sua espada em seu único olho. Uma vez 
+                derrotado, levante os jarros no local para revelar um botão oculto. Pressionando este botão, o baú contendo a Big Key aparecerá.
+                
+                Com a Big Key em mãos, volte uma sala para cima e uma sala para a direita, colocando-o novamente na sala com o Big 
+                Chest, o grande baú. Use a Big Key para abrir este baú e você obterá o Bow, ou arco. Lembre-se que para usar o arco, você precisará de flechas.
+                
+                Prossiga em sua jornada seguindo uma sala para cima, entrando na porta com a fechadura da Big Key, e pegando as 
+                escadas à esquerda. Continue para a esquerda por três salas, e suba uma sala. Você chegou na sala do chefe. Este 
+                chefe é composto por seis cavaleiros, cada um dos quais pode ser derrotado com três flechas. Se suas flechas acabarem, use sua espada para derrotá-los.
+                
+                Depois de sair vitorioso deste desafio, ao sair do castelo, volte para falar com Sahasrahla. Ele irá recompensá-lo 
+                com a Bota do Pégasus, que lhe permitirá correr quando o botão A for pressionado.
+                
+                Com essa nova habilidade, dirija-se à biblioteca ao sul da vila. Aqui, um livro aguarda na parede norte. Use a 
+                velocidade proporcionada pelas Botas do Pégasus para bater na parede e fazer o livro cair. Pegue-o, pois ele é uma 
+                ferramenta vital para os próximos desafios de sua aventura no universo de The Legend of Zelda: A Link to the Past.</p><br>
+        </div>
+
+        <div class="post">
+            <h2 class="text-[#46A766] text-2xl font-bold mb-4">DESERT PALACE (SEGUNDO PINGENTE)</h2>
+            <p class="text-white text-base">A sua jornada pelo segundo pingente, no Desert Palace, traz consigo uma série de desafios
+                 e enigmas que irão exigir habilidade e atenção para serem superados.</p>
+            <p class="text-white text-base">Comece a sua aventura dirigindo-se para a região sudoeste do mapa, onde se encontra o vasto 
+                deserto. Aqui, você deve procurar uma grande plataforma posicionada à esquerda. Suba nesta plataforma e procure um bloco
+                 que se encontra no centro dela. Este bloco possui uma inscrição que só pode ser lida usando o Book of Mudora, que você 
+                 coletou anteriormente. Ao usar o livro para ler a inscrição, a porta do castelo será aberta.
+
+                Dentro do Desert Palace, um dos desafios que você irá enfrentar envolve a necessidade de obter chaves que estão 
+                localizadas em cima de postes de luz. Para alcançar estas chaves, use as botas do Pégasus e corra em direção aos 
+                postes para que as chaves caiam no chão. Ao longo da exploração do palácio, você pode encontrar salas que, à primeira 
+                vista, parecem ser sem saída. Nestes casos, tente acender todas as tochas presentes na sala usando a lamp, pois isso 
+                pode revelar uma passagem oculta.</p>
+            <p class="text-white text-base">A partir da entrada do palácio, siga para o norte até alcançar o topo da área principal. 
+                Aqui, você encontrará quatro portas. Entre na quarta porta à direita. Nesta sala, corra contra a tocha acima à esquerda 
+                para fazer cair uma chave. Com a chave em mãos, volte para a sala anterior e siga todo o caminho para a direita, desça e
+                 entre na porta trancada à direita. Subindo uma sala, você encontrará a Big Key.
+
+                Com a Big Key, dirija-se para a sala à esquerda acima e use a chave para abrir o grande baú e coletar a luva. Esta luva 
+                é essencial para prosseguir na jornada.
+                
+                Para encontrar o chefe do Desert Palace, você precisará retornar à sala à esquerda abaixo e entrar na porta inferior 
+                que leva ao exterior do palácio. Siga para cima e à direita para encontrar uma entrada que está cercada por pedras. 
+                Agora que você tem as luvas, pode levantar essas pedras e desbloquear o caminho. Siga pelas salas até encontrar uma 
+                que contém quatro jarros, quatro tochas e um inimigo. Acenda todas as tochas rapidamente, antes que qualquer uma delas se 
+                apague, para revelar uma nova porta.
+                
+                O desafio final desta fase envolve derrotar as minhocas. Para isso, carregue sua espada com o botão B e acerte-as na 
+                cabeça. Cada minhoca requer 8 golpes de espada para ser derrotada. Ao derrotá-las, você finalmente adquire o Pendant 
+                of Power, o tão esperado segundo pingente.</p><br>
+        </div>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">TOWER OF HERA (TERCEIRO PINGENTE)</h2>
+        <p class="text-white text-base">A jornada para o terceiro pingente na Tower of Hera é desafiadora e repleta de intricados enigmas. 
+            Cada passo deve ser cuidadosamente seguido para garantir a vitória.
+
+            Comece sua aventura se dirigindo para o norte, até a Death Mountain. Comece a escalar através da caverna. Ao longo do caminho, 
+            você encontrará um homem que lhe dará um espelho. Isso será vital para sua jornada, portanto, certifique-se de aceitá-lo.
+            
+            Uma vez no topo da montanha, desloque-se para a direita até encontrar um portal azul. Ao pisar nele, você será transportado 
+            para o Dark World, um lugar sinistro e desconhecido. Vá para a esquerda e procure por duas marcas escuras em forma de diamante 
+            no chão. Posicione-se em cima de uma delas e use o espelho que você recebeu anteriormente. Você será transportado para o alto 
+            de uma rocha. Aqui, colete o pedaço de coração e depois avance para cima, caindo em outra plataforma. Continue indo para a 
+            direita e você finalmente encontrará a Torre de Hera.
+            
+            Para encontrar a Big Key, você deve proceder da seguinte maneira: a partir da entrada, caminhe para cima e passe pela porta 
+            superior à esquerda. Aqui, você será atacado por blocos voadores. Você pode destruí-los ou deixar que colidam com a parede. 
+            Quando eles pararem de atacar, a porta à direita será aberta. Avance para a direita uma sala e depois para baixo em outra. 
+            Acenda todas as quatro tochas nesta sala para fazer o baú com a Big Key aparecer.
+            Durante sua exploração, é essencial não esquecer de pegar a Moon Pearl (pérola da lua). Sem ela, você será transformado em um coelho no Dark World. A Moon Pearl está no grande baú localizado no meio do quarto andar, mas há uma diferença de nível que impede que você a alcance diretamente. Para chegar lá, você precisará subir até o quinto andar e pisar no desenho de estrela à direita da sala. Isso fará com que um buraco apareça perto do centro do topo da sala. Caia no buraco pela parte de cima para chegar ao baú e coletar a Moon Pearl.
+
+            Agora, você deve subir até o sexto andar para enfrentar o chefe da torre. O chefe é uma grande minhoca cujo único ponto 
+            vulnerável é a ponta do rabo. Para derrotá-lo, mantenha uma distância segura das bordas do quarto e segure o botão B para 
+            carregar sua espada. Quando estiver totalmente carregada, libere o botão para acertar o rabo do chefe. Repita este processo 
+            seis vezes. Cuidado para não cair durante a batalha, pois isso fará você ter que recomeçar todo o processo. Se isso acontecer, 
+            não se esqueça de coletar corações nos jarros para recuperar sua saúde. Ao derrotar o chefe, você finalmente adquire o terceiro e 
+            último pingente.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">MASTER SWORD E HYRULE CASTLE</h2>
+        <p class="text-white text-base">Comece sua jornada na floresta, movendo-se para a esquerda e para cima. Você notará um tronco peculiar. 
+            Entre nele e você será transportado para uma nova área da floresta, um local misterioso e silencioso. Caminhe diretamente para frente, 
+            até que você veja a icônica Master Sword. Chegue por trás da espada, estenda a mão e levante-a. A Master Sword agora é sua, uma 
+            poderosa arma capaz de romper encantamentos maléficos.
+
+            Com a Master Sword em mãos, é hora de dirigir-se ao Hyrule Castle. Entre pelo grandioso portão da frente e localize a porta à 
+            esquerda. Passe por ela e suba pela escada abaixo para entrar no castelo. Uma vez dentro, avance para a direita até encontrar 
+            uma porta obstruída por uma corrente elétrica. Use a nova força da Master Sword para quebrar a corrente e abra a porta.
+            
+            Depois de entrar na porta, você deve subir até o sétimo andar do castelo. Aqui, você encontrará Agahnim em uma sala junto com 
+            Zelda. Prepare-se para um cenário perturbador: Zelda irá desaparecer diante de seus olhos, e Agahnim, o malfeitor, se esconderá 
+            atrás das cortinas. Não hesite – use sua espada para cortar as cortinas e revelar Agahnim, começando a luta final.
+            
+            A batalha contra Agahnim exige estratégia e timing preciso. O vilão usará sua magia contra você, mas a chave para a vitória 
+            está em usar essa mesma magia contra ele. Quando Agahnim conjurar esferas mágicas, use sua espada para rebatê-las de volta para ele. 
+            Cuidado, pois nem tudo pode ser rebatido. As “estrelas” de energia que Agahnim lança são perigosas e não podem ser rebatidas.
+            
+            A posição de Agahnim na sala é uma indicação importante de qual ataque ele irá usar. Quando ele se move para o centro da sala, 
+            na parte superior, é um sinal de que está prestes a conjurar um poderoso raio. Quando isso acontecer, rapidamente vá para a direita 
+            ou esquerda da sala e fique encostado na parede para evitar o ataque. Continue rebatendo suas esferas mágicas enquanto evita as 
+            estrelas e raios até que Agahnim seja finalmente derrotado.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">DARK PALACE (PRIMEIRO CASTELO DO DARK WORLD)</h2>
+        <p class="text-white text-base">Inicie a jornada para o primeiro castelo do Dark World, o Dark Palace, dirigindo-se para o número um 
+            indicado em seu mapa. Desça a pirâmide e caminhe para a direita até encontrar uma pequena casa cercada por matos. Prossiga para a 
+            área de mato à direita e atrás da casa, prestando atenção para encontrar setas no chão. Essas setas marcam os pontos pelos quais você 
+            pode se mover entre os matos.
+
+            Navegar por este labirinto verde pode ser um desafio, então mantenha o foco na sombra de Link entre os matos para poder orientá-lo. 
+            Ao emergir perto do final do labirinto, você encontrará Kiki, um macaco, seguindo você. Kiki vai solicitar um pagamento de um total 
+            de 110 rupees – pague a quantia e ele abrirá a porta do castelo para você. Mas cuidado, evite qualquer dano enquanto Kiki estiver 
+            com você, caso contrário, ele fugirá e você terá que retornar para o mato e começar tudo de novo.
+            
+            Dentro do castelo, você encontrará tartarugas inimigas. Para derrotá-las, use o martelo para virá-las e ataque-as com a espada 
+            enquanto elas estiverem de cabeça para baixo. Para chegar ao baú localizado no canto inferior direito da sala, que tem um bumper azul no centro, da entrada, vá para a direita para uma sala com um portal azul. Entre no portal e você será levado para uma sala com uma rachadura na parede. Use uma bomba para revelar uma passagem secreta. Siga pelo caminho até chegar na sala do mapa. Lá, exploda a parte rachada na parede à esquerda para abrir uma passagem para o baú.
+            
+            Para localizar a Big Key, a partir da entrada, use a porta do meio para subir duas salas. Em seguida, vá para a esquerda para 
+            encontrar uma ponte com uma rachadura. Coloque uma bomba ali e caia pelo buraco que foi aberto. Siga para cima e para a direita para chegar a uma escada que conduz ao baú onde está a Big Key.
+            
+            O martelo (hammer) está no primeiro andar. Para obtê-lo, da entrada do palácio, suba duas salas pela porta do meio e vá para a 
+            ponte à direita. Empurre o bloco mais baixo para a direita, para que ele caia da ponte. Continue subindo até uma grande sala com um bumper azul no meio. Se os blocos azuis nessa sala não estiverem levantados, posicione-se perto do baú e atire uma flecha no cristal à sua esquerda. Atravesse a porta superior esquerda e corra pela ponte até o topo da sala. Se você demorar muito, a ponte começará a desmoronar. Entre na porta da esquerda e exploda a parede do lado direito da sala (um pouco para baixo) para chegar até o martelo.
+            
+            Para chegar até o chefe, a partir da entrada do castelo, suba duas salas pela porta do meio. Quando chegar na sala com duas 
+            pontes, vá pela ponte da direita. Empurre o bloco mais baixo para a direita para que ele caia da ponte. Use seu boomerang ou 
+            uma flecha para acertar o cristal na plataforma perto de você. Quando os blocos azuis estiverem abaixados, pule o buraco e entre 
+            na porta da direita. Nesta sala, você encontrará um botão à direita da escada. Empurre uma estátua para cima do botão, depois 
+            suba a escada e passe pela porta. Você encontrará uma estátua de um olho só. Atire uma flecha no olho dela para revelar uma 
+            passagem secreta. Desça a escada, vá uma sala para a esquerda, uma sala para baixo e uma para a direita. Você estará em uma sala com 
+            um warp tile. Pise nele e quando reaparecer, vá para cima até chegar na sala do chefe.
+            
+            Para derrotar o chefe, é necessário primeiro quebrar sua máscara. Dê marteladas nela ou deixe três bombas (uma de cada vez) para 
+            acertá-lo. Quando a máscara estiver quebrada, atire flechas ou dê espadadas na gema localizada no centro da testa dele para acabar 
+            com ele. A tática aqui é atacar, evitar seus movimentos, e continuar a ofensiva até que ele seja derrotado. Assim, você terá concluído 
+            o Dark Palace, a primeira etapa de sua jornada no Dark World.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">SWAMP PALACE (SEGUNDO CASTELO DO DARK WORLD)</h2>
+        <p class="text-white text-base">A jornada pelo segundo castelo do Dark World, o Swamp Palace, inicia-se após a 
+            conquista do palácio anterior, onde uma menina lhe revelará a localização de todos os cristais restantes no 
+            seu mapa. Seu próximo objetivo é o castelo marcado com o número 2.
+
+            Para acessar o segundo castelo, você precisará navegar através de tocos de árvores que bloqueiam o caminho,
+             e para tanto, use o martelo para esmagá-los. Este castelo é repleto de desafios aquáticos, então as nadadeiras (flippers) 
+             serão itens indispensáveis para o progresso na fase.
+            
+            Ao entrar no palácio, você perceberá uma escada quebrada inalcançável. Para conseguir chegar até ela, é necessário alagar 
+            o castelo. Fique do lado de fora do castelo e use o espelho para retornar ao Light World. Entre no pequeno prédio 
+            próximo e puxe a alavanca localizada à direita para liberar a água. Saia do prédio, posicione-se na marca do espelho e 
+            volte para o Dark World. Agora, retorne ao palácio e nade até a escada quebrada.
+            
+            A Big Key está bem escondida dentro do castelo. Para encontrá-la, vá para a sala localizada no lado mais esquerdo do 
+            andar B1. Nessa sala, você encontrará vários blocos formando um Y. Empurre os blocos para desobstruir seu caminho e suba as escadas para chegar ao primeiro andar. Em seguida, mova o bloco no canto superior direito e caia no buraco localizado naquele canto para retornar ao B1. Lá, mova-se para a direita uma sala e abra o baú para encontrar a chave.
+            
+            O hookshot (gancho) está no B1. A partir da entrada, vá para a grande sala em forma de quadrado no centro do andar. Use 
+            a Big Key para abrir o baú no centro da sala e adquirir o hookshot.
+            
+            Agora, para chegar até o chefe, comece na sala onde você encontrou o hookshot. Use-o para mover-se para cima uma tela. 
+            Empurre a estátua até o botão localizado no canto superior esquerdo para abrir duas portas. Entre na segunda porta à direita 
+            e siga pelo caminho até chegar a uma sala cheia de água. Empurre a alavanca para drenar a água. Em seguida, vá para a esquerda
+            e para cima até uma sala com sete quedas d’água. Atravesse pela segunda queda d’água, contando da direita para a esquerda, para 
+            encontrar a passagem para o chefe.
+            
+            O chefe deste palácio é derrotado através do uso inteligente do hookshot e da espada. Use o hookshot para puxar as
+             bolinhas do chefe para perto de você e, em seguida, acerte-as com sua espada. Após destruir todas as bolinhas, acerte 
+             o chefe com sua espada oito vezes, ou com o martelo quatro vezes para derrotá-lo. Dessa forma, você terá vencido o Swamp
+              Palace, a segunda etapa da sua aventura no Dark World.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">SKULL WOODS PALACE (TERCEIRO CASTELO DO DARK WORLD)</h2>
+        <p class="text-white text-base">No terceiro castelo do Dark World, o Skull Woods Palace, sua jornada começa na Kakariko Village 
+            no Light World. Você deve se deslocar para o canto superior esquerdo da cidade e adentrar na floresta. Na floresta, prossiga 
+            para cima e entre na primeira trilha à direita. Continue nessa trilha até o seu fim e desça até uma clareira. Aqui, use seu martelo 
+            para esmagar os dois tocos e levante a pedra para revelar um portal. Pise no portal e você será transportado para a Skull Woods no 
+            Dark World.
+
+            O Skull Woods Palace é uma rede intricada de cavernas e buracos na floresta, os quais você deve explorar para acessar diferentes 
+            partes do castelo. Para encontrar a Big Key, você deve adentrar na caverna localizada no centro da floresta. A entrada dessa caverna 
+            é indicada pela seta à direita no seu mapa.
+            
+            Uma vez dentro, remova o pote que está no centro da sala para revelar um botão. Este botão abre a porta no alto da tela. Para manter 
+            essa porta aberta, empurre a estátua sobre o botão. Após a estátua estar corretamente posicionada no botão, passe pela porta de cima 
+            e você encontrará a Big Key.
+            
+            O Fire Rod (bastão de fogo), uma ferramenta crucial para esta fase, está no primeiro andar do castelo. Para encontrar este item, 
+            levante todas as flores que formam um quadrado no canto superior direito da floresta. Isso revelará um buraco no chão. Caia neste 
+            buraco e use uma bomba para explodir a parede à esquerda da sala. Antes de passar pelo buraco aberto pela bomba, pise na estrela 
+            localizada no topo da sala. Feito isso, puxe a alavanca no centro da sala para chegar ao Fire Rod.
+            
+            Para localizar o chefe do palácio, vá para o canto superior esquerdo do castelo. Busque por um grande esqueleto que se assemelha 
+            a um inseto e parece possuir um grande nariz. Use o Fire Rod para atingir a ponta do nariz deste esqueleto. Explore a área até que 
+            você encontre o chefe.
+            
+            Se em algum momento você se encontrar preso, lembre-se de que o Fire Rod pode ser usado para atirar fogo e acender tochas do outro 
+            lado de buracos, além de poder revelar portas escondidas ao cortar mato nas paredes com sua espada.
+            
+            Antes de entrar em confronto com o chefe, é recomendável que você possua um bottle com uma poção azul e tenha ao menos metade 
+            do seu medidor de magia preenchido. Para derrotar o chefe, atire fogo nele repetidamente. Ele cairá após 15 disparos do Fire Rod 
+            ou 8 golpes com a espada. A vantagem de usar o Fire Rod é que você pode manter uma distância segura, evitando ser atingido pelos 
+            ataques do chefe.
+            
+            Ao final dessa batalha, o terceiro castelo do Dark World, o Skull Woods Palace, estará vencido.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">VILLAGE OF OUTCASTS (QUARTO CASTELO DO DARK WORLD)</h2>
+        <p class="text-white text-base">Para adentrar o quarto castelo do Dark World, o Village of Outcasts, você precisa se dirigir ao 
+            local marcado com o número 4 no seu mapa. No centro da cidade, você notará uma imponente estátua verde. Utilize o botão A para 
+            puxar a grade na frente dessa estátua, abrindo assim a entrada do castelo.
+
+            O Village of Outcasts é composto por quatro grandes salas que são bastante semelhantes entre si. Para encontrar a Big Key, 
+            você deve direcionar-se à sala situada no canto inferior direito. Nessa sala, desloque-se para o canto inferior esquerdo e passe 
+            por uma passagem secreta. A Big Key se encontra dentro do baú localizado no final dessa passagem.
+            
+            A segunda luva, outro item essencial nesta fase, está localizada no segundo andar subterrâneo (B2). Para chegar até ela, a partir 
+            da entrada do palácio, atravesse a porta da Big Key e siga para a esquerda, passando por três salas consecutivas. Em seguida, suba 
+            uma sala e golpeie o cristal até que os blocos azuis desçam. Retorne à última sala e entre na porta localizada no canto superior 
+            direito. Prossiga para a direita mais uma vez e a escada na segunda sala levará você ao B2. A luva está no canto inferior esquerdo 
+            desse andar.
+            
+            A jornada para encontrar o chefe do castelo o levará ao último andar. Aqui, vá até a última sala à direita, onde a luz do sol penetra 
+            pela janela e ilumina o chão. Coloque uma bomba exatamente na parte iluminada do chão. Para fazer isso, posicione a bomba no chão e 
+            pressione o botão A duas vezes. Quando a bomba explodir, um raio de luz solar irá atravessar o buraco no chão, iluminando a sala do chefe.
+            
+            Retorne ao B2 e resgate a menina. Leve-a até a sala do chefe e posicione-a no feixe de luz. Nesse momento, o chefe “desaparecido” 
+            será revelado. A batalha que se segue requer que você atinja a cabeça do chefe com sua espada sempre que ele estiver perto. Enquanto 
+            ele estiver circulando a sala, movimente-se para a direita e para a esquerda para esquivar-se dos ataques de laser. São necessários 
+            três golpes na cabeça dele para derrubá-lo. Uma nova cabeça surgirá a cada vez que a anterior for destruída. Continue atacando a nova 
+            cabeça até que todas as três sejam destruídas.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">ICE PALACE (QUINTO CASTELO DO DARK WORLD)</h2>
+        <p class="text-white text-base">Você chegou ao Ice Palace. Para ingressar no palácio, você precisa ir ao Pound of Happiness no Light World, 
+            que é o lugar correspondente ao número 5 no mapa do Dark World. Nessa ilha, existe uma pedra escura que só pode ser levantada com a ajuda 
+            da Titan´s Mitt (a segunda luva). Ao levantar a pedra, um portal será revelado. Adentre esse portal e você chegará à entrada do Ice Palace.
+
+            No interior do castelo, você irá encontrar uma porta no nível B6 que só pode ser aberta por um botão. Para manter essa porta aberta, é 
+            necessário empurrar um bloco do nível B5 para baixo. Antes disso, certifique-se de que os blocos azuis estejam abaixados. Retorne ao B5, 
+            vá para a sala à direita, desça uma sala, vá uma para a esquerda e suba a escada para o B4. Acesse a sala mais à esquerda e caia para o 
+            B5 pelo buraco no chão. Você estará agora na sala do Big Chest. Mova-se uma sala à direita e empurre o bloco inferior esquerdo pelo 
+            buraco no centro da sala. Caia pelo buraco também e empurre o bloco para cima do botão para manter a porta aberta.
+            
+            A Big Key está escondida no lado direito do B3. Para encontrá-la, desça as escadas até uma sala onde há uma estátua com a língua para 
+            fora. Puxe a língua da estátua e uma porta à direita se abrirá. Atravesse essa porta e suba as escadas para encontrar o baú que contém 
+            a Big Key.
+            
+            A Blue Armor (a roupa azul) está no B5. Para chegar lá, vá para a sala mais à esquerda do B3. Desça a escada e você encontrará uma 
+            sala com uma rachadura no chão e um buraco. Coloque uma bomba no espaço acima da escada para revelar um segundo buraco. Caia por esse 
+            buraco e você estará perto do Big Chest. Abra-o e pegue a Blue Armor.
+            
+            Para encontrar o chefe, dirija-se ao B6. Neste nível, você terá que colocar um bloco em cima do botão no centro da sala (conforme 
+            explicado anteriormente no número 2). Atravesse a porta superior da sala, levante o bloco no canto inferior esquerdo da sala e caia no
+             buraco.
+            
+            O chefe deste estágio é um oponente astuto. Para derrotá-lo, você deve evitar seus ataques e acertar 8 disparos do bastão de fogo 
+            nele. Após os oito golpes do bastão de fogo, ele se transformará em três olhos. Cada globo ocular precisa ser atingido seis vezes com 
+            a espada ou o fire rod.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">MISERY MIRE (SEXTO CASTELO DO DARK WORLD)</h2>
+        <p class="text-white text-base">Comece convocando o pássaro no Light World usando a flauta. Viaje para o local 6 no mapa do pássaro. 
+            Ao pousar, você encontrará pedras que, ao serem levantadas, revelarão um portal. Pise nesse portal para ser transportado para o Dark World. 
+            Caminhe para o norte até o local que tem o desenho do Ether Medallion. Ao pisar nesse desenho, use o medalhão para abrir a entrada do 
+            palácio.
+
+            Dentro do palácio, ao chegar na primeira sala do B2, você encontrará uma porta fechada. Para abri-la, levante os potes para revelar 
+            um botão. Empregue o Cane of Somaria para criar um bloco e empurre-o para cima do botão, mantendo a porta aberta. Atravesse essa porta para 
+            prosseguir na sua jornada.
+            
+            A Big Key está escondida na sala superior esquerda do primeiro andar. Nesta sala, você verá duas salas idênticas com tochas. Use sua 
+            lanterna para acender todas as quatro tochas simultaneamente para acionar um interruptor. Ao fazer isso, você sentirá um pequeno 
+            terremoto, 
+            a parede se moverá, revelando um buraco. Entre nesse buraco.
+            
+            O Cane of Somaria está na sala mais à direita do B1. Quando entrar nesta sala, use rapidamente o hookshot no bloco à direita da porta
+             e corra pela ponte. O Big Chest encontra-se no topo da ponte.
+            
+
+            Quando estiver de posse da Big Key, dirija-se para o B2. Na primeira sala que você encontrar, haverá um botão coberto no centro de 
+            um ambiente escuro. Use o Cane of Somaria para criar um bloco em cima do botão. Em seguida, desça uma sala pela porta inferior esquerda.
+             Use o boomerang ou bombas para manipular os Crystal Switches (aqueles cristais azuis e rosas) e continue seguindo para a esquerda até 
+             encontrar uma escada que leva ao B1. Siga pela porta da Big Key à esquerda para finalmente chegar ao chefe.
+            
+            Para derrotar o chefe, posicione-se em um dos cantos inferiores da sala para evitar ataques. Use a técnica de carregar a espada para 
+            destruir os pequenos olhos que voam em sua direção. Uma vez que tenha lidado com os pequenos olhos, empregue a mesma técnica para enfrentar 
+            o olho grande.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">TURTLE ROCK (SÉTIMO CASTELO DO DARK WORLD)</h2>
+        <p class="text-white text-base">Primeiramente, para entrar no palácio, você deve dirigir-se ao topo da Death Mountain no Light World. 
+            Prossiga o máximo possível para a direita até encontrar uma plataforma com três tocos. Com seu martelo, bata nestes tocos na 
+            seguinte sequência: direita, topo, esquerda. Isso fará com que um portal surja no centro da plataforma. Entre neste portal 
+            para ser transportado ao Dark World. Agora, posicione-se no desenho do Quake Medallion e utilize-o, isso irá abrir a entrada 
+            do palácio. Durante seu percurso pelo palácio, lembre-se de que sempre que encontrar uma linha pontilhada branca, você deve 
+            usar o Cane of Somaria no início desta linha para criar uma plataforma.
+
+            No intuito de conseguir a Small Key na sala cheia de monstros com bola-e-corrente, você precisa acertar o Crystal Switch para 
+            fazer os blocos azuis descerem. Ao empurrar os blocos brancos da sala, você revelará um baú que contém uma chave. Use essa chave 
+            para abrir a porta no topo da sala. Para abrir a porta na sala da plataforma no B2, vá para a ilha no centro da sala e levante o 
+            pote para encontrar um botão. Pise nele uma vez para abrir a porta à esquerda e embaixo da sala.
+            
+            A Big Key está escondida no B1. Você precisará percorrer vários canos até chegar à sala mais à esquerda deste andar. Derrote 
+            todos os monstros presentes na sala para obter outra small key. Utilize-a para abrir a porta da direita, depois disso, avance 
+            para a sala à direita. Entre no tubo para encontrar a Big Key.
+            
+            O Mirror Shield (escudo espelho) está localizado na área central inferior do B1. Para chegar ao Big Chest, dirija-se ao canto 
+            inferior esquerdo do B1 e exploda a parte rachada da parede. Ao caminhar para baixo, você estará em uma área externa ao palácio. 
+            Prossiga para a direita e volte a entrar no palácio. Aqui, você precisará do Cane of Somaria para chegar até o Big Chest.
+            
+            Com a Big Key em mãos, vá para a sala no canto superior esquerdo do B1. Suba pela porta nesta sala para chegar ao B2. Use o Cane of 
+            Somaria no ponto de interrogação e caminhe na plataforma que você criou até chegar a uma plataforma no centro da sala. Pise no botão 
+            uma vez e siga com a plataforma para o canto inferior esquerdo da sala. Desça pela porta e vá para a esquerda na porta inferior da 
+            sala. Você entrará em uma sala cheia de Crystal Switches. Dirija-se para a área superior central da sala e suba pela porta para chegar 
+            ao B3. Crie uma plataforma com o Cane of Somaria e navegue até a porta da Big Key. Entre por ela para encontrar o chefe.
+            
+            Para derrotar o chefe, você terá que combinar os poderes do Fire Rod, Ice Rod e da espada. Use o Fire Rod na cabeça azul, em seguida,
+             acerte-a com sua espada. Repita esse processo até destruir essa cabeça. Posteriormente, use o Ice Rod na cabeça vermelha e ataque-a 
+             com sua espada até que ela seja destruída. Após destruir ambas as cabeças, o chefe assumirá a forma de algo semelhante a uma minhoca. 
+             Concentre seus ataques no círculo brilhante no centro de seu corpo, acertando-o três vezes para derrotá-lo.</p>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">GANON’S TOWER</h2><br>
+        <p class="text-white text-base">A jornada final em The Legend of Zelda: A Link to the Past te leva à imponente Ganon’s Tower. 
+            Este é o desafio final que aguarda você antes do confronto com Ganon.
+
+            Para acessar a Ganon’s Tower, viaje até o topo da Death Mountain. Fique na frente da Torre e, se você possuir todos os sete 
+            cristais do Dark World, uma entrada se abrirá, permitindo seu acesso.
+            
+            No interior da torre, o seu primeiro destino será a grande sala localizada na parte central inferior do primeiro andar. Neste 
+            lugar, você encontrará um desafio singular: um chão invisível. Para resolver esse enigma, utilize o Ether Medallion para tornar o
+             chão visível temporariamente e siga o caminho até a porta situada no canto superior direito da sala.
+            
+            Após passar pela porta, encontre as partes rachadas no chão desta sala e use bombas para explodi-las, criando um buraco no qual 
+            você deve cair. Isso te levará à sala do chefe do castelo do primeiro pingente. Para derrotá-lo, você pode utilizar tanto as flechas 
+            quanto a espada. Após vencer esta batalha, prossiga uma sala para cima para obter a Big Key.
+            
+            Com a Big Key em mãos, retorne à grande sala com a ponte invisível no centro inferior do primeiro andar. Agora você deve caminhar 
+            pela ponte da esquerda, subir pela porta ao final dela e encontrar o Big Chest.
+            
+            Para confrontar Agahnim, inicie na entrada da Torre e siga pela escada no centro até o sexto andar. Nesta sala, você precisará 
+            usar o Fire Rod rapidamente para acender as quatro tochas e abrir uma porta no topo da sala. Através desta porta, siga para a esquerda 
+            e para baixo até encontrar a Moldorm. Vença-a e um baú surgirá do outro lado da sala. Use o hookshot para atravessar o abismo até o 
+            baú e então suba a escada para a parte superior da sala.
+            
+            Agora, vá para a esquerda e para cima subindo a escada que leva ao sétimo andar. Continue seguindo o caminho até a porta que pode 
+            ser aberta com a Big Key e entre nela.
+            
+            Finalmente, você estará diante de Agahnim. A chave para derrotá-lo é usar sua própria mágica contra ele, assim como você fez no 
+            Hyrule Castle. Quando ele lançar sua bola mágica, rebata-a com sua espada. Continue fazendo isso até derrotá-lo.
+            
+            Com a vitória sobre Agahnim, você estará preparado para o confronto final com Ganon, o grande vilão de The Legend of Zelda: A 
+            Link to the Past. Boa sorte, aventureiro! Esta será sua batalha mais difícil, mas a recompensa será proporcional ao desafio.</p><br>
+        <h2 class="text-[#46A766] text-2xl font-bold mb-4">BATALHA COM GANON E A TRIFORCE DENTRO DA PIRÂMEDE</h2>
+        <p class="text-white text-base">Sua jornada épica em The Legend of Zelda: A Link to the Past atinge seu clímax no confronto final 
+            contra Ganon e a subsequente busca pela Triforce dentro da Pirâmide. Este desafio final exige astúcia, habilidade e paciência.
+
+            Primeiro, você deve viajar para o local no Dark World que corresponde à sua casa no Light World. Lá, você encontrará à venda uma 
+            bomba rosa. Faça a compra, mas esteja ciente de que não deve correr nem saltar com a bomba seguindo você. Essa bomba é extremamente 
+            sensível e pode detonar prematuramente se você agir descuidadamente.
+            
+            Depois de comprar a bomba rosa, seu próximo destino é a Pirâmide. Quando chegar lá, procure uma rachadura na parte marrom da 
+            pirâmide. É aqui que você deve colocar sua bomba rosa. Assim que a bomba explodir, abrindo um caminho na rachadura, entre no 
+            espaço criado.
+            
+            Nesse recinto, você verá uma fonte misteriosa. Lance sua espada e suas flechas na fonte para obter um poderoso upgrade: as Silver 
+            Arrows, ou Flechas de Prata. Este é um recurso essencial para o confronto final com Ganon.
+            
+            Depois de obter as Flechas de Prata, você deve subir até o topo da Pirâmide e encontrar o buraco que Ganon criou. É hora de 
+            enfrentá-lo em batalha. Durante o confronto, você deve evitar os ataques dele e golpeá-lo com sua espada sempre que possível.
+            
+            Após um certo tempo de batalha, Ganon usará sua magia para apagar as luzes da sala. Quando isso ocorrer, acenda as tochas na 
+            sala e volte a atacá-lo com sua espada. Este ataque fará com que Ganon mude de cor, tornando-se azul ou prata. Agora é a hora 
+            de usar suas Silver Arrows, acertando-o enquanto estiver nessa cor.
+            
+            A luta com Ganon é uma questão de paciência e resistência. Você deve esperar até que ele retorne à sua cor normal, e então 
+            repetir o processo de acender as tochas e atacá-lo com suas Flechas de Prata mais três vezes.
+            
+            Finalmente, após o combate titânico, Ganon será derrotado. Agora você pode entrar na porta acima do local onde a batalha 
+            ocorreu. Lá, você encontrará a Triforce, a relíquia lendária que você buscou durante toda a sua aventura.
+            
+            E assim termina a sua jornada em The Legend of Zelda: A Link to the Past. Com Ganon derrotado e a Triforce em mãos, a paz 
+            voltará a reinar sobre Hyrule. Parabéns, aventureiro, você triunfou! Curta o final do game.</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('translate-y-full');
+        }
+    </script>
+</body>
+
+</html>
