@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/assets/icon.gif" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>TriforceRealm</title>
+    <style>
+        body {
+            background-image: url(./assets/background-mainpage.png);
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+            min-height: 100vh; 
+            margin: 0; 
+        }
+        #navLinks {
+            background-image: url('./assets/background_menu_hm.jpg');
+            background-size: 200px 200px;
+            background-repeat: repeat;
+        }
+        .menu-active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-rubik bg-[#042904]">
+    <div id="header" class="bg-[#337B4B] fixed inset-x-0 top-0 z-50 border-b-2 border-[#BFA047]">
+        <div class="max-w-screen-lg mx-auto flex justify-between items-center px-4 py-3">
+            <a href="./index.html">
+                <img class="w-[180px] lg:w-[220px] cursor-pointer" src="./assets/logotest.svg" alt="...">
+            </a>
+            <div class="flex items-center gap-6 md:hidden">
+                <ion-icon onclick="toggleMenu()" name="menu" class="text-3xl cursor-pointer text-white"></ion-icon>
+            </div>
+            <div class="font-bold text-[#327B4B] hidden md:flex items-center justify-center gap-4 pl-4">
+                <a href="./about.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 hover:text-[#46A766]">Sobre</a>
+                <a href="./guide.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 hover:text-[#46A766]">Guia</a>
+                <a href="./gamepage.html" class="font-bold text-[#327B4B] bg-white border-solid border-2 border-[#BFA047] py-2 px-6 rounded-full hover:bg-white">Jogar!</a>
+            </div>
+        </div>
+    </div>
+    <div id="navLinks" class="font-bold bg-cover bg-center bg-no-repeat bg-fixed fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden">
+        <a href="./about.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 text-[#327B4B] hover:text-[#46A766]">Sobre</a>
+        <a href="./guide.html" class="border-[#BFA047] bg-white border-2 rounded-full py-1 px-6 text-[#327B4B] hover:text-[#46A766]">Guia</a>
+        <a href="./gamepage.html" class="font-bold text-[#327B4B] bg-white border-solid border-2 border-[#BFA047] py-2 px-6 rounded-full hover:bg-white">Jogar!</a>
+    </div>
+    
+    <div class="lg:max-w-screen-lg mx-auto mt-24 lg:mt-22 text-center relative">
+        <img src="./assets/zeldalogo.png" alt="Zelda Logo" class="mx-auto mb-4 lg:mb-0 w-[50%] lg:w-[25%] max-w-[600px]">
+    </div>    
+
+    <div class="lg:max-w-screen-lg mx-auto mt-8 lg:mt-[30px] text-center relative">
+        <div class="relative inline-block cursor-pointer rounded-lg overflow-hidden shadow-[12px_6px_0px_#46A766] border-[3px] border-[#46A766] max-w-full sm:max-w-[330px] mx-auto">
+            <img id="gifImage" class="w-[200px] sm:w-full h-auto cursor-pointer rounded-lg" src="./assets/trailerzelda.gif" alt="Zelda GIF" onclick="playFullscreenVideo()">
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <ion-icon id="play-outline" name="play-circle" class="text-[#93ffb7] text-6xl cursor-pointer mb-2" onclick="playFullscreenVideo()"></ion-icon>
+                <p class="text-[#5fc581]">Assista o trailer.</p>
+            </div>
+        </div>        
+    </div>
+    
+    <div class="lg:max-w-screen-lg mx-auto mt-4 lg:mt-8 text-center">
+        <div id="fullscreenVideo" class="hidden fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
+            <button class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeFullscreenVideo()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+            <video id="videoPlayer" class="mx-auto" width="640" height="360" controls>
+                <source src="./assets/zeldatrailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="mb-0">
+        <p class="px-4 lg:px-[380px] text-center text-white tracking-tighter text-xs lg:text-sm mt-4">"The Legend of Zelda: A Link to the Past" é um jogo de 1991 para SNES que se destaca por sua 
+            jogabilidade não-linear e introdução do Dark World. Seguindo Link em uma jornada para salvar Zelda e 
+            derrotar Ganon, o jogo é aclamado por sua inovação técnica e trilha sonora marcante. Ele estabeleceu a série 
+            Zelda como uma referência nos videogames e influenciou o design de jogos de aventura e RPG por décadas.
+        </p>
+    </div>
+
+    <div class="mt-6 lg:mt-0">
+        <img class="mx-auto w-[50%] lg:w-[15%]" src="./assets/logoconsoles.png">
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('translate-y-full');
+            navLinks.classList.toggle('menu-active');
+        }
+
+        function playFullscreenVideo() {
+            var gifImage = document.getElementById('gifImage');
+            var playOutlineIcon = document.getElementById('play-outline');
+            var fullscreenVideo = document.getElementById('fullscreenVideo');
+            
+            gifImage.classList.add('hidden');
+            playOutlineIcon.classList.add('hidden');
+            fullscreenVideo.classList.remove('hidden');
+        }
+
+        function closeFullscreenVideo() {
+            var gifImage = document.getElementById('gifImage');
+            var playOutlineIcon = document.getElementById('play-outline');
+            var fullscreenVideo = document.getElementById('fullscreenVideo');
+            
+            gifImage.classList.remove('hidden');
+            playOutlineIcon.classList.remove('hidden');
+            fullscreenVideo.classList.add('hidden');
+            
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.pause();
+        }
+    </script>
+</body>
+</html>
