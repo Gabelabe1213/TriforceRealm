@@ -1,3 +1,5 @@
+![Screenshot homepage](https://i.ibb.co/svMkkJs/SCREENSHOT.png)
+
 # Guia Interativo de Zelda: A Link to the Past
 
 Este é um projeto GitHub que oferece uma página guia interativa para o jogo clássico "The Legend of Zelda: A Link to the Past". Aqui você pode jogar o jogo em si diretamente na página web, além de encontrar um guia passo a passo para ajudá-lo a completar 100% do jogo.
